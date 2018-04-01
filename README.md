@@ -43,11 +43,11 @@ Personnellement, j'ai particulièrement travaillé sur la partie UML, design (mo
 **Créer la partie back de l'application :**  
 
 - préparer les diagrammes UML : use case, diagramme des classes, diagramme d'activité, diagramme de base ...  
-    ¤ USE case du projet :  
+	    ¤ USE case du projet :  
 <p>
   <img src=".\src\assets\images\use_case.jpg"/>
 </p>  
-	    ¤ Diagramme d'activité :  
+	    ¤ Diagramme d'activité :  
 <p>
   <img src=".\src\assets\images\diagramme_activite.jpg"/>
 </p>  
@@ -120,8 +120,8 @@ USE `police_app`;```
 
 - insertion de données (test) dans "weapon" :  
     
-    ```INSERT IGNORE INTO `weapon` (`id`, `create_date`, `type`, `modele`, `update_date`) VALUES (1,  "2017-09-25 08:37:34", 'Essai', 'Ca marche', "2017-12-22 05:44:55"),  
-    (2, "2017-09-25 08:37:34", 'Paille', 'Jaune et bleue', "2017-12-22 05:44:55"), ...```  
+    ```INSERT IGNORE INTO `weapon` (`id`, `create_date`, `type`, `modele`, `update_date`) VALUES (1,  "2017-09-25 08:37:34", 'Essai', 'Ca marche', "2017-12-22 05:44:55"),
+    (2, "2017-09-25 08:37:34", 'Paille', 'Jaune et bleue', "2017-12-22 05:44:55"), ...```  
 
 - récupération des données pour affichage :  
     ```SELECT * FROM `weapon`;```  
