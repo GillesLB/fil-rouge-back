@@ -69,7 +69,8 @@ Personnellement, j'ai particulièrement travaillé sur la partie UML, design (mo
 <p>
   <img src=".\src\assets\images\schema_BDD.png"/>  
 
-</p>
+</p>  
+
 	¤ schema.sql : possède le schéma pour créer les différentes tables de la base  
 
 	¤ data.sql : contient un jeu de données pour remplir les tables  
@@ -117,13 +118,11 @@ On va trouver différents types de requête SQL :
      ```CREATE DATABASE IF NOT EXISTS `police_app` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
 USE `police_app`;```
 
-- création des tables (ici : weapon) :
-  
-    ```CREATE TABLE IF NOT EXISTS `weapon` (`id` bigint(20) NOT NULL AUTO_INCREMENT,`create_date` datetime DEFAULT NULL, `modele` varchar(255) NOT NULL, `type` varchar(255) NOT NULL, `update_date` datetime DEFAULT NULL, PRIMARY KEY (`id`)  
+- création des tables (ici : weapon) :  
+	```CREATE TABLE IF NOT EXISTS `weapon` (`id` bigint(20) NOT NULL AUTO_INCREMENT,`create_date` datetime DEFAULT NULL, `modele` varchar(255) NOT NULL, `type` varchar(255) NOT NULL, `update_date` datetime DEFAULT NULL, PRIMARY KEY (`id`)  
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;```  
 
-- insertion de données (test) dans "weapon" :
-
+- insertion de données (test) dans "weapon" :  
 	```INSERT IGNORE INTO `weapon` (`id`, `create_date`, `type`, `modele`, `update_date`) VALUES (1,  "2017-09-25 08:37:34", 'Essai', 'Ca marche', "2017-12-22 05:44:55"), (2, "2017-09-25 08:37:34", 'Paille', 'Jaune et bleue', "2017-12-22 05:44:55"), ...```
 
 - récupération des données pour affichage :  
