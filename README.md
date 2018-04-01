@@ -67,10 +67,13 @@ Personnellement, j'ai particulièrement travaillé sur la partie UML, design (mo
 
 	    ¤ diagramme de bases :  
 <p>
-  <img src=".\src\assets\images\schema_BDD.png"/>
+  <img src=".\src\assets\images\schema_BDD.png"/>  
+
 </p>
-	¤ schema.sql : possède le schéma pour créer les différentes tables de la base
-	¤ data.sql : contient un jeu de données pour remplir les tables
+	¤ schema.sql : possède le schéma pour créer les différentes tables de la base  
+
+	¤ data.sql : contient un jeu de données pour remplir les tables  
+
 
 
 - créer les classes java, en lien avec Spring et Hiberbate  
