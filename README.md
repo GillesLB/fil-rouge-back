@@ -26,7 +26,7 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 6 - Importer le projet "Fil rouge" sous l'IDE et le lancer en tant que projet Maven  
 7 - Modifier le fichier "application.properties", afin de :  
     * saisir le localhost (ici, 3306)  
-    * entrer les identifiants de connection à la base de données  
+    * entrer les identifiants de connection à la base de données  
     
 ----------
 
