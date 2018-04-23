@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `piece_of_evidence` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `police_case`
+-- Structure de la table `police_case` (avec contrainte `unique` sur la colonne `name`)
 --
 
 CREATE TABLE IF NOT EXISTS `police_case` (
@@ -123,7 +123,8 @@ CREATE TABLE IF NOT EXISTS `police_case` (
   `description` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `status_case` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -236,7 +237,8 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
   `marque` varchar(255) DEFAULT NULL,
   `model` varchar(255) DEFAULT NULL,
   `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE (`license_plate`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -253,4 +255,6 @@ CREATE TABLE IF NOT EXISTS `weapon` (
   `update_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 

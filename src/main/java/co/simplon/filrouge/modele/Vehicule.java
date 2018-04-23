@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -36,7 +35,7 @@ public class Vehicule implements Serializable {
     @Column
     private String color;
 
-    @Column
+    @Column(unique=true)
     private String licensePlate;
 
     @CreationTimestamp
