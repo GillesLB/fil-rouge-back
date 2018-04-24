@@ -121,12 +121,15 @@ USE `police_app`;```
 - création des tables (ici : weapon) :  
 	```CREATE TABLE IF NOT EXISTS `weapon` (`id` bigint(20) NOT NULL AUTO_INCREMENT,`create_date` datetime DEFAULT NULL, `modele` varchar(255) NOT NULL, `type` varchar(255) NOT NULL, `update_date` datetime DEFAULT NULL, PRIMARY KEY (`id`)  
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;```  
-
+    
+- récupérer la marque, la couleur et la plaque des voitures liées à une affaire dans la table police_case_vehicle :
+	```SELECT name, marque, color, license_plate FROM police_app.police_case INNER JOIN police_app.vehicule ON police_case.id = vehicule.id;```  
+	
 - insertion de données (test) dans "weapon" :  
 	```INSERT IGNORE INTO `weapon` (`id`, `create_date`, `type`, `modele`, `update_date`) VALUES (1,  "2017-09-25 08:37:34", 'Essai', 'Ca marche', "2017-12-22 05:44:55"), (2, "2017-09-25 08:37:34", 'Paille', 'Jaune et bleue', "2017-12-22 05:44:55"), ...```
 
-- récupération des données pour affichage :  
-    ```SELECT * FROM `weapon`;```  
+- mise à jour d'un modèle d'arme (ici, pour l'id 2) dans la table weapon :  
+    ```UPDATE police_app.weapon SET modele = "Bombe à eau" WHERE id = 2;```  
 
 - effacer des liens entre des tables ou des données :  
     ```DELETE FROM `police_case_weapon` WHERE police_case_id = ? AND weapon_id = ?;```  
