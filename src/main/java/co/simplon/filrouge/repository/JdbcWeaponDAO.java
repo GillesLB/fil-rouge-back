@@ -12,8 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-//c'est un marqueur pour n'importe quelle classe qui accomplit le rôle ou le stéréotype 
-//(aussi connu comme l'Objet d'Accès de Données ou DAO) d'un dépôt
+/* c'est un marqueur pour n'importe quelle classe qui accomplit le rôle ou le stéréotype 
+*  (aussi connu comme l'Objet d'Accès de Données ou DAO) d'un dépôt */
 @Repository
 public class JdbcWeaponDAO implements WeaponLinkDAO {
 
@@ -25,25 +25,23 @@ public class JdbcWeaponDAO implements WeaponLinkDAO {
             this.datasource = jdbcTemplate.getDataSource();
         }
 
-    // crée une requête pour supprimer le lien
-    @Override
+    @Override // crée une requête pour supprimer le lien
     public void deleteLinkWeapon(Long idCase, Long idWeapon) throws Exception {
 
         String sql = "DELETE FROM police_case_weapon WHERE police_case_id = ? AND weapon_id = ?";
 
         try (Connection connection = this.datasource.getConnection()) {
-        	// supprime la table de jointure (ici, arme / affaire) correspondant aux id entrés
+        	/* supprime la table de jointure (ici, arme / affaire)
+        	*  correspondant aux id entrés */
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
 
                 try {
                     pstmt.setLong(1, idCase);
                     pstmt.setLong(2, idWeapon);
 
-                    // Log info
-                    logSQL(pstmt);
-
-                    // Run the the update query
-                    int result = pstmt.executeUpdate();
+                    logSQL(pstmt); // Log info
+                    
+                    int result = pstmt.executeUpdate(); // Run the the update query
                     if (result != 1) {
                         throw new Exception("id not found !");
                     }

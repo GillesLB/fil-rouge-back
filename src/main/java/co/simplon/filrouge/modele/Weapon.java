@@ -12,68 +12,60 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-//crée automatiquement les getter / setter dans les méthodes
-@Getter
+@Getter //crée automatiquement les getter / setter dans les méthodes
 @Setter
 
-//génère des classes (lié à Lombok)
-@Builder
+@NoArgsConstructor //va générer un constructeur sans paramètre
 
-//va générer un constructeur sans paramètre
-@NoArgsConstructor
+@AllArgsConstructor //crée un constructeur avec 1 param dans chaque champ de la classe
 
-//crée un constructeur avec 1 param dans chaque champ de la classe
-@AllArgsConstructor
+@Entity //déclare la classe comme un entity bean (donc une classe POJO persistante)
 
-//déclare la classe comme un entity bean (donc une classe POJO persistante)
-@Entity
-
-//permet de définir le nom de la table / du catalogue / du schéma pour le mapping de l'entity bean
+/* permet de définir le nom de la table / du catalogue /
+*  du schéma pour le mapping de l'entity bean */
 @Table(name = "weapon")
 
-//permet d'auditer une entité
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class) //permet d'auditer une entité
 public class Weapon implements Serializable {
 
- // marque le champ comme une clé primaire unique
- @Id
- // génération auto et attribution (par objectDB) à l'objet
- @GeneratedValue(strategy = GenerationType.AUTO)
+ @Id // marque le champ comme une clé primaire unique
+
+ @GeneratedValue(strategy = GenerationType.AUTO)  // génération auto et attribution (par objectDB) à l'objet
  private Long id;
 
- // String non null et de longueur > 0
- @NotBlank
+ @NotBlank // String non null et de longueur > 0
  private String type;
 
  @NotBlank
  private String modele;
 
- // fixe automatiquement un temps pour l'objet à sa création (date du jour)
- @CreationTimestamp
- // ne conserve que la date
- @Temporal(TemporalType.TIMESTAMP)
- // la requête SQL concernera la colonne "create_date"
- @Column(name = "create_date")
+ @CreationTimestamp // fixe automatiquement un temps pour l'objet à sa création (date du jour)
+
+ @Temporal(TemporalType.TIMESTAMP) // ne conserve que la date
+
+ @Column(name = "create_date") // la requête SQL concernera la colonne "create_date"
  private Date createDate;
 
- // en cas de modification, changement de la date d'origine de l'objet par la date actuelle
+ /* en cas de modification, changement de la date
+ *  d'origine de l'objet par la date actuelle */
  @UpdateTimestamp
  @Temporal(TemporalType.TIMESTAMP)
  @Column(name = "update_date")
  private Date updateDate;
 
- 	// @ManyToMany : l'entité esclave doit préciser un champ retour par une annotation
- 	// fetch : permet de surcharger le type de récupération pour une requête particulière
- 	// cascade : obligatoire quand nous appliquons la relation entre les objets, 
- 	// la cascade attribue des opérations de transferts faites sur ses objets d'enfant liés
- 	// mappedBy : référence le champ qui porte la relation (côté maître)
+ 	/* @ManyToMany : l'entité esclave doit préciser un champ retour par une annotation
+ 	*  fetch : permet de surcharger le type de récupération pour une requête particulière
+ 	*  cascade : obligatoire quand nous appliquons la relation entre les objets, 
+ 	*  la cascade attribue des opérations de transferts faites sur ses objets d'enfant liés
+ 	*  mappedBy : référence le champ qui porte la relation (côté maître) */
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             },
             mappedBy = "weapon")
-    @JsonBackReference // evite la récurcivite dans le JSON
+
+    @JsonBackReference // évite la récurcivite dans le JSON
     private Set<PoliceCase> policeCase = new HashSet<> ();
 
 }
