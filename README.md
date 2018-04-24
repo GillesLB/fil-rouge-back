@@ -122,7 +122,7 @@ USE `police_app`;```
 	```CREATE TABLE IF NOT EXISTS `weapon` (`id` bigint(20) NOT NULL AUTO_INCREMENT,`create_date` datetime DEFAULT NULL, `modele` varchar(255) NOT NULL, `type` varchar(255) NOT NULL, `update_date` datetime DEFAULT NULL, PRIMARY KEY (`id`)  
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;```  
     
-- récupérer la marque, la couleur et la plaque des voitures liées à une affaire dans la table police_case_vehicle :
+ - récupérer la marque, la couleur et la plaque des voitures liées à une affaire dans la table police_case_vehicle :
 	```SELECT name, marque, color, license_plate FROM police_app.police_case INNER JOIN police_app.vehicule ON police_case.id = vehicule.id;```  
 	
 - insertion de données (test) dans "weapon" :  
