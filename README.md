@@ -18,7 +18,7 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 
 **Mode opératoire :**
 
-1 - Installer JDK dans un IDE (par exemple, Eclipse) : aller sur http://www.oracle.com/technetwork/java, cliquer sur J SE et suivre les instructions
+1 - Installer JDK dans un IDE (par exemple, Eclipse) : aller sur http://www.oracle.com/technetwork/java, cliquer sur J SE et suivre les instructions  
 2 - Installer Apache Maven : ouvrir Eclipse, puis aller sur Help > Install New Software  
 Ensuite, name = **m2e** et location = **http://download.eclipse.org/technology/m2e/releases** et suivez les instructions  
 3 - Mettre à jour les dépendances de Maven (faire un clic droit sur le projet, puis Maven > Update Project)  
