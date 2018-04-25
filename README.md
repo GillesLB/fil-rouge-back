@@ -12,28 +12,28 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 
 **Pré-requis :**
 
-- JDK : 1.8.0_61  
-- Apache Maven : 3.5.2  
-- SQL server : 5.6  
+	JDK : 1.8.0_61  
+	Apache Maven : 3.5.2  
+	SQL server : 5.6  
 
 **Mode opératoire :**
 
-1 - Installer JDK dans un IDE (par exemple, Eclipse) 
-
-2 - Installer SQL server (à travers MySQL Workbench par exemple)
-
-3 - Installer Apache Maven
-
-4 - Mettre à jour les dépendances de Maven
-
+1 - Installer JDK dans un IDE (par exemple, Eclipse) : aller sur http://www.oracle.com/technetwork/java, cliquer sur J SE et suivre les instructions
+2 - Installer Apache Maven : ouvrir Eclipse, puis aller sur Help > Install New Software  
+Ensuite, name = **m2e** et location = **http://download.eclipse.org/technology/m2e/releases** et suivez les instructions  
+3 - Mettre à jour les dépendances de Maven (faire un clic droit sur le projet, puis Maven > Update Project)  
+4 - Installer Spring Boot : aller sur Help > Eclipse Marketplace et saisir sts (Spring Tool Service) et suivez les instructions  
 5 - Vérifier si des mises à jour sont disponibles pour les autres composants
-
-6 - Importer le projet "Fil rouge" sous l'IDE et le lancer en tant que projet Maven
-
+6 - Importer le projet "Fil rouge" sous l'IDE 
 7 - Modifier le fichier "application.properties", afin de :
 
 * saisir le localhost (ici, 3306)  
-* entrer les identifiants de connection à la base de données
+* entrer les identifiants de connection à la base de données  
+
+Pour démarrer l'application, il suffira de lancer, sur la classe Main, un "Run As", puis de choisir "Spring boot app".  
+Il est possible de se connecter, dans un navigateur, sur http://localhost:8080, pour vérifier les données 
+(en format JSON), les connexions, ...  
+Par exemple, le lien http://localhost:8080/api/weapon affichera le contenu de la table weapon.
 
 ----------
 
@@ -136,7 +136,3 @@ USE `police_app`;```
 
 ----------
 
-Pour démarrer l'application, il suffira de lancer, sur la classe Main, un "Run As", puis de choisir "Spring boot app".  
-Il est possible de se connecter, dans un navigateur, sur http://localhost:8080, pour vérifier les données 
-(en format JSON), les connexions, ...  
-Par exemple, le lien http://localhost:8080/api/weapon affichera le contenu de la table weapon.
