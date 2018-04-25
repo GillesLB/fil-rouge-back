@@ -23,8 +23,8 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 Ensuite, name = **m2e** et location = **http://download.eclipse.org/technology/m2e/releases** et suivez les instructions  
 3 - Mettre à jour les dépendances de Maven (faire un clic droit sur le projet, puis Maven > Update Project)  
 4 - Installer Spring Boot : aller sur Help > Eclipse Marketplace et saisir sts (Spring Tool Service) et suivez les instructions  
-5 - Vérifier si des mises à jour sont disponibles pour les autres composants
-6 - Importer le projet "Fil rouge" sous l'IDE 
+5 - Vérifier si des mises à jour sont disponibles pour les autres composants  
+6 - Importer le projet "Fil rouge" sous l'IDE  
 7 - Modifier le fichier "application.properties", afin de :
 
 * saisir le localhost (ici, 3306)  
