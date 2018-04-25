@@ -55,11 +55,13 @@
 			<version>1.16.20</version><!--$NO-MVN-MAN-VER$-->
 			<scope>provided</scope>
 		</dependency>
-		<dependency> 
-    		<groupid>org.mockito</groupid>
-    		<artifactid>mockito-all</artifactid>
-            <version>1.9.5</version>
-	    </dependency>
+		
+		<dependency>
+      		<groupId>org.easymock</groupId>
+     		 <artifactId>easymock</artifactId>
+     		 <version>3.2</version>
+      		<scope>test</scope>
+   		 </dependency>
 	</dependencies>
 
 	<build>
