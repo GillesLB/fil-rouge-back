@@ -253,7 +253,8 @@ CREATE TABLE IF NOT EXISTS `weapon` (
   `modele` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE (`modele`, `type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
